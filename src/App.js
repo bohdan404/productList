@@ -5,11 +5,11 @@ import ProductList from "./Components/ProductList";
 function App() {
 
 
-  return (
-    <div className="product-list">
-        <ProductList/>
-    </div>
-  );
+    return (
+        <div className="product-list">
+            <ProductList/>
+        </div>
+    );
 }
 
 export default App;

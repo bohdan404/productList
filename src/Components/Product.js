@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import ProductForm from "./ProductForm";
 import {RiCloseCircleFill, TiEdit} from "react-icons/all";
 
-let Produc = ({products,compleateProduct,removeProduct,updateProduct}) => {
+let Produc = ({products, compleateProduct, removeProduct, updateProduct}) => {
 
     const [edit, setEdith] = useState({
         id: null,
@@ -10,29 +10,29 @@ let Produc = ({products,compleateProduct,removeProduct,updateProduct}) => {
     })
 
     const submitUpdate = value => {
-        updateProduct(edit.id ,value)
+        updateProduct(edit.id, value)
         setEdith({
-            id:null,
+            id: null,
             value: ''
         })
     }
 
-    if (edit.id){
+    if (edit.id) {
         return <ProductForm edith={edit} onSubmit={submitUpdate}/>
     }
 
     return products.map((product, index) => (
         <div className={product.isCompleate ? 'todo-row coplete' : 'todo-row'}
-             key= {index}>
+             key={index}>
             <div key={product.id} onClick={() => compleateProduct(product.id)}>
                 {product.text}
             </div>
             <div className="icons">
                 <RiCloseCircleFill className='delete-icon'
-                                   onClick={()=> removeProduct(product.id)}
+                                   onClick={() => removeProduct(product.id)}
                 />
                 <TiEdit className='edith-icon'
-                        onClick={()=> setEdith({id: product.id ,value: product.text})}
+                        onClick={() => setEdith({id: product.id, value: product.text})}
                 />
 
             </div>
