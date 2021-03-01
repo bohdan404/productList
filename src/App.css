@@ -1,0 +1,7 @@
+.product-list{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid gray;
+    padding-bottom: 50px;
+}
